@@ -1,0 +1,8 @@
+
+mpython:S1542¡"NRename function "iExit" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(ı“”u8Ášö­ø-
+mpython:S100º"NRename method "mathsPM" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(•Š“Ğ8¨èÄÖø-
+upython:S117¢"VRename this local variable "iExit" to match the regular expression ^[_a-z][a-z0-9_]*$.(£Ûë8Öü÷­ø-
+kpython:S100W"HRename method "e" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(”˜·ôøÿÿÿÿ8Ã–ñÔø-
+ppython:S100"RRename method "numberEnter" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(™åÒ8Å•­µø-
+fpython:S100M"IRename method "pi" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(üÂÙ78šæÔø-
+Spython:S1066""/Merge this if statement with the enclosing one.(¬Ô¹ñùÿÿÿÿ8ñì¶µø-
