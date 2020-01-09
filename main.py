@@ -8,10 +8,45 @@ root.title("Scientific Calculator")
 root.configure(background="powder blue")
 root.resizable(width=False, height=False)
 root.geometry("357x420+0+0")
-
 calc = Frame(root)
 calc.grid()
 
+# ========Menu=========
+
+menubar = Menu(calc)
+filemenu = Menu(menubar, tearoff=0)
+menubar.add_cascade(label="File", menu=filemenu)
+filemenu.add_command(label="Standard", command=standard)
+filemenu.add_command(label="Scientific", command=scientific)
+filemenu.add_separator()
+filemenu.add_command(label="Exit", command=iExit)
+editmenu = Menu(menubar, tearoff=0)
+menubar.add_cascade(label="Edit", menu=editmenu)
+editmenu.add_command(label="Cut")
+editmenu.add_command(label="Copy")
+editmenu.add_separator()
+editmenu.add_command(label="Paste")
+helpmenu = Menu(menubar, tearoff=0)
+menubar.add_cascade(label="Help", menu=helpmenu)
+helpmenu.add_command(label="View Help")
+root.config(menu=menubar)
+root.mainloop()
+
+# ========Functions=========
+
+def iExit():
+    iExit = tkinter.messagebox.askyesno("Scientific Calculator", "Do you Wish to Exit?")
+    if iExit > 0:
+        root.destroy()
+        return
+
+def scientific():
+    root.resizable(width=False, height=False)
+    root.geometry("713x420+0+0")
+
+def standard():
+    root.resizable(width=False, height=False)
+    root.geometry("357x420+0+0")
 
 class Calc:
     def __init__(self):
@@ -200,7 +235,6 @@ class Calc:
 
 
 added_value = Calc()
-
 txtDisplay = Entry(calc, font=('arial', 40), bg="white", width=15, justify=RIGHT)
 txtDisplay.grid(row=0, column=0, columnspan=4, pady=1)
 txtDisplay.insert(0, "0")
@@ -282,48 +316,3 @@ btnexpm1 = Button(calc, text="expm1", width=5, height=2, font=('arial', 30),
                   bg="powder blue", command=added_value.expm1).grid(row=5, column=6)
 btnlgamma = Button(calc, text="γ", width=5, height=2, font=('arial', 30),
                    bg="powder blue", command=added_value.lgamma).grid(row=5, column=7)
-
-
-# ========Functions=========
-
-def iExit():
-    iExit = tkinter.messagebox.askyesno("Scientific Calculator", "Do you Wish to Exit?")
-    if iExit > 0:
-        root.destroy()
-        return
-
-
-def scientific():
-    root.resizable(width=False, height=False)
-    root.geometry("713x420+0+0")
-
-
-def standard():
-    root.resizable(width=False, height=False)
-    root.geometry("357x420+0+0")
-
-
-# ========Menu=========
-
-menubar = Menu(calc)
-
-filemenu = Menu(menubar, tearoff=0)
-menubar.add_cascade(label="File", menu=filemenu)
-filemenu.add_command(label="Standard", command=standard)
-filemenu.add_command(label="Scientific", command=scientific)
-filemenu.add_separator()
-filemenu.add_command(label="Exit", command=iExit)
-
-editmenu = Menu(menubar, tearoff=0)
-menubar.add_cascade(label="Edit", menu=editmenu)
-editmenu.add_command(label="Cut")
-editmenu.add_command(label="Copy")
-editmenu.add_separator()
-editmenu.add_command(label="Paste")
-
-helpmenu = Menu(menubar, tearoff=0)
-menubar.add_cascade(label="Help", menu=helpmenu)
-helpmenu.add_command(label="View Help")
-
-root.config(menu=menubar)
-root.mainloop()
